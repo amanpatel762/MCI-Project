@@ -1,0 +1,132 @@
+version: 1.0
+entity: bank_profile
+description: Schema for bank profile inputs used to compute the Merger Compatibility Index (MCI).
+fields:
+  - name: bank_id
+    type: string
+    required: true
+    description: Stable unique identifier for the bank (e.g., FDIC cert, LEI, or internal code).
+  - name: bank_name
+    type: string
+    required: true
+    description: Legal name of the bank.
+  - name: ticker
+    type: string
+    required: false
+    description: Public market ticker if applicable; leave blank for private institutions.
+  - name: country
+    type: string
+    required: true
+    description: Country of domicile.
+  - name: regulator
+    type: string
+    required: true
+    description: Primary prudential regulator (e.g., OCC, FDIC, Federal Reserve, PRA).
+  - name: reporting_currency
+    type: string
+    required: true
+    description: ISO 4217 currency code for reported figures (e.g., USD).
+  - name: total_assets_mil
+    type: number
+    required: true
+    description: Total assets in millions of reporting_currency.
+  - name: total_deposits_mil
+    type: number
+    required: true
+    description: Total deposits in millions of reporting_currency.
+  - name: total_loans_mil
+    type: number
+    required: true
+    description: Gross loans in millions of reporting_currency.
+  - name: tier1_capital_ratio
+    type: number
+    required: true
+    description: Tier 1 capital ratio (%) expressed as a decimal (e.g., 0.12 for 12%).
+  - name: leverage_ratio
+    type: number
+    required: true
+    description: Leverage ratio (%) expressed as a decimal (e.g., 0.09 for 9%).
+  - name: roe
+    type: number
+    required: false
+    description: Return on equity (%) expressed as a decimal.
+  - name: roa
+    type: number
+    required: false
+    description: Return on assets (%) expressed as a decimal.
+  - name: npl_ratio
+    type: number
+    required: false
+    description: Non-performing loans as a share of total loans, expressed as a decimal.
+  - name: cost_to_income_ratio
+    type: number
+    required: false
+    description: Cost-to-income ratio expressed as a decimal.
+  - name: revenue_mix_retail_pct
+    type: number
+    required: false
+    description: Percentage of revenue from retail banking (0-100).
+  - name: revenue_mix_corporate_pct
+    type: number
+    required: false
+    description: Percentage of revenue from corporate/commercial banking (0-100).
+  - name: revenue_mix_investment_pct
+    type: number
+    required: false
+    description: Percentage of revenue from investment banking/markets (0-100).
+  - name: loan_portfolio_residential_pct
+    type: number
+    required: false
+    description: Percentage of loan book in residential mortgages (0-100).
+  - name: loan_portfolio_commercial_pct
+    type: number
+    required: false
+    description: Percentage of loan book in commercial/CRE (0-100).
+  - name: loan_portfolio_consumer_pct
+    type: number
+    required: false
+    description: Percentage of loan book in consumer/other (0-100).
+  - name: top_three_markets
+    type: string
+    required: false
+    description: Comma-separated list of the top three markets or states by deposits/branches.
+  - name: branch_count
+    type: integer
+    required: false
+    description: Total number of branches.
+  - name: core_system
+    type: string
+    required: false
+    description: Core banking platform (e.g., FIS, Fiserv, Jack Henry).
+  - name: digital_maturity_score
+    type: integer
+    required: false
+    description: Digital maturity self-assessment on a 1–5 scale (5 = highly advanced).
+  - name: major_tech_partners
+    type: string
+    required: false
+    description: Comma-separated list of key technology vendors/partners.
+  - name: cra_rating
+    type: string
+    required: false
+    description: Latest Community Reinvestment Act rating (for U.S. banks).
+  - name: regulatory_actions
+    type: string
+    required: false
+    description: Summary of any outstanding or recent consent orders or MRAs/MRIAs.
+  - name: esg_score
+    type: number
+    required: false
+    description: ESG score or rating if available (0-100 scale recommended).
+  - name: employee_count
+    type: integer
+    required: false
+    description: Total employees.
+  - name: unionized
+    type: boolean
+    required: false
+    description: Whether the workforce is unionized.
+  - name: notes
+    type: string
+    required: false
+    description: Free-form notes or context helpful for compatibility analysis.
